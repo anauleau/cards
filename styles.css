@@ -1,0 +1,48 @@
+body {
+	padding: 10px;
+}
+
+#table {
+	height: 350px;
+	width: 1000px;
+	background-color: darkgreen;
+}
+
+.card {
+	border: 1px black solid;
+	background-color: whitesmoke;
+	display: inline-block;
+	margin: 2px;
+	padding: 2px;
+	min-width: 63px;
+}
+
+.labelTopLeft {
+	text-align: left;
+}
+
+.labelBottomRight {
+	text-align: right;
+}
+
+.labelSuit {
+	text-align: center;
+	margin: 5px 0;	
+}
+
+.red {
+	color: red;
+}
+
+.black {
+	color: black;
+}
+
+.row {
+	display: inline-block;
+	padding: 23px;
+}
+
+#shuffleBtn {
+	margin: 5px;
+}
