@@ -2,12 +2,13 @@
 	var suits = ['spades', 'clubs', 'hearts', 'diamonds'];
 	var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
 	var deck = [];
+	var valueIndex = {2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 'J': 10, 'Q': 10, 'K': 10, 'A': {high: 11, low: 1}};
 
 	// Store details about each suit
 	var suitDictionary = {
 		spades: {color: 'black'},
 		clubs: {color: 'black'},
-		hearts: {color: 'red'},
+		hearts: {color: 'red'},          
 		diamonds: {color: 'red'}
 	};
 
@@ -15,6 +16,20 @@
 	function Card(value, suit) {
 		this.value = value;
 		this.suit = suit;
+		this.count;
+		this.hidden = false;
+	}
+
+	// Game class
+	function Game(dealer, player) {
+		this.dealer = dealer;
+		this.player = player;
+		this.winner;
+	}
+
+	function Hand() {
+		this.cards = [];
+		this.total = 0; 
 	}
 
 	// Build Deck
