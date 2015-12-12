@@ -12,12 +12,12 @@
 		diamonds: {color: 'red'}
 	};
 
+	
 	// Card Class
 	function Card(value, suit) {
 		this.value = value;
 		this.suit = suit;
 		this.count;
-		this.hidden = false;
 	}
 
 	// Game class
@@ -29,7 +29,21 @@
 
 	function Hand() {
 		this.cards = [];
-		this.total = 0; 
+		this.total = 0;
+		this.total2 = 0; // need a second total if the hand has an ace
+		this.dealer;
+	}
+	
+	Hand.prototype.getAceCount = function() {
+		var count = 0;
+		this.cards.reduce(function(a, b){
+			if (b.value === 'A') return a += 1;
+		}, count);
+		return count;
+	}
+	
+	Hand.prototype.getTotals = function () {
+		var totals = [];
 	}
 
 	// Build Deck
@@ -50,6 +64,7 @@
 	function clearTable() {
 		$('.row').empty();
 	}
+
 	function deal(deck) {
 		deck.map(function(card){
 			$('.row').append('<div class="card ' + suitDictionary[card.suit].color + '"><div class="labelTopLeft">' + card.value + '</div><div class="labelSuit">' + card.suit + '</div><div class="labelBottomRight">' + card.value + '</div></div>');
